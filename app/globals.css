@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+
+}
+
+@theme inline {
+  --font-public: var(--font-public);
+}
+
+body {
+  font-family: var(--font-public);
+}
