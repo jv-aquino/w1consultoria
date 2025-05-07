@@ -1,13 +1,31 @@
 @import "tailwindcss";
 
-:root {
-
-}
-
 @theme inline {
   --font-public: var(--font-public);
+
+  --color-cyan-50: hsl(191, 45%, 98%);  
+  --color-cyan-100: hsl(176, 17%, 83%); 
+  --color-cyan-300: hsl(179, 19%, 56%);
+  --color-cyan-500: hsl(173, 72%, 53%);
+  --color-cyan-600: hsl(186, 33%, 28%);
+  --color-cyan-700: hsl(194, 38%, 16%);
+  --color-cyan-900: hsl(191, 35%, 6%);
+
+  --color-gray-400: hsl(200, 15%, 92%);
 }
 
 body {
+  background-color: var(--color-cyan-50);
+  color: var(--color-cyan-900);
   font-family: var(--font-public);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(194, 6%, 43%)
+}
+::-webkit-scrollbar-track {
+  background: hsl(195, 5%, 69%);
 }
