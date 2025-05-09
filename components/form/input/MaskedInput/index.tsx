@@ -1,13 +1,17 @@
 'use client';
 import { useState } from 'react';
 import { Check, X } from 'lucide-react';
-import styles from './input.module.css';
+import styles from '../input.module.css';
 import { mergeClasses } from '@/utils';
 import type { InputHTMLAttributes } from 'react';
+import RequiredTag from '../../RequiredTag';
+import { InputMask } from '@react-input/mask';
 
 interface ValidatedInputProps extends InputHTMLAttributes<HTMLInputElement> {
   title: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mask: string;
+  regexType: string;
   setValue?: (value: any) => void;
   overrideValidate?: (value: string) => boolean;
   isValid?: boolean | null;
@@ -20,10 +24,13 @@ interface ValidatedInputProps extends InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode;
 }
 
-function ValidatedInput({
+function MaskedInput({
+  mask,
+  regexType,
   title,
   name,
   value,
+  required,
   setValue,
   overrideValidate,
   isValid: externallyControlledValid,
@@ -41,6 +48,8 @@ function ValidatedInput({
   const [internalValid, setInternalValid] = useState<boolean | null>(null);
 
   const isControlled = value !== undefined && setValue !== undefined;
+
+  const regex = regexType === 'number' ? /\d/ : /\d/;
 
   const validate = overrideValidate ?? ((val: string) => {
     if (type === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
@@ -69,12 +78,15 @@ function ValidatedInput({
     <div className={mergeClasses('flex flex-col', containerClassName)}>
       <label className={mergeClasses('text-lg font-medium', labelClassName)} htmlFor={name}>
         {title}
+        {required && <RequiredTag />}
         {children}
       </label>
 
       <div className={mergeClasses('relative inline-block', inputContainerClassName)}>
-        <input
+        <InputMask
           {...rest}
+          mask={mask} 
+          replacement={{ _: regex }}
           className={mergeClasses('outline-none text-slate-900 placeholder:text-gray-400', inputClassName)}
           type={type}
           name={name}
@@ -97,4 +109,4 @@ function ValidatedInput({
   );
 }
 
-export default ValidatedInput;
+export default MaskedInput;
