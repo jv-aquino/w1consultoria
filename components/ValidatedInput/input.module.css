@@ -1,0 +1,16 @@
+.icon_container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.icon {
+  width: 22px;
+  height: 22px;
+}
+.icon_valid {
+  color: var(--color-green-500);
+}
+.icon_invalid {
+  color: red;
+}
