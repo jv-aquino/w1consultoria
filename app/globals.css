@@ -50,6 +50,13 @@ body {
   transition-duration: .3s;
 }
 
+@utility auth-form {
+  width: 90%;
+  margin-top: 16px;
+  @variant lg {
+    width: 70%;
+  }
+}
 @utility auth-label {
   margin-bottom: 8px;
 }
@@ -59,15 +66,42 @@ body {
   border: 1px solid var(--color-gray-300);
   border-radius: 8px;
   @variant focus {
-    border-color: var(--color-cyan-300);
+    border-color: var(--color-cyan-400);
   }
 }
 @utility auth-icon {
-  right: 8px;
+  right: 4px;
+  @variant md {
+    right: 8px
+  }
+}
+@utility auth-submitButton {
+  margin-top: 32px;
+  padding: 8px;
+  border-radius: 8px;
+  width: 100%;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  color: var(--color-cyan-100);
+  background-color: var(--color-cyan-900);
+  border: 1px solid var(--color-cyan-900);
+  @variant hover {
+    color: var(--color-cyan-900);
+    background-color: var(--color-cyan-500);
+  }
+  @apply colorTransition;
+}
+@utility auth-changeLink {
+  display: block;
+  margin-top: 24px;
+  font-weight: 300;
+  color: var(--color-gray-500);
 }
 
 @utility optional-label {
-  color: var(--color-gray-400);
+  color: var(--color-cyan-300);
   font-size: 16px;
   font-style: italic;
   margin-left: 4px;

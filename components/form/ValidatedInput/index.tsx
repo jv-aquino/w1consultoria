@@ -84,7 +84,7 @@ function ValidatedInput({
         />
 
         {showValid !== null && (
-          <span className={mergeClasses(styles.icon_container + ' right-0', iconContainerClassName)}>
+          <span className={mergeClasses(iconContainerClassName as string, styles.icon_container)}>
             {showValid ? (
               <Check className={`${styles.icon} ${styles.icon_valid}`} />
             ) : (
