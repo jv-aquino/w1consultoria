@@ -1,26 +1,23 @@
 import AuthSidebar from "@/components/auth/AuthSidebar";
 import AuthForm from "@/components/auth/AuthForm";
 import ValidatedInput from "@/components/form/input/ValidatedInput";
-import MaskedInput from "@/components/form/input/MaskedInput";
-import { phoneMask } from "@/utils";
+import HybridInput from "./HybridInput";
 
 function LoginPage() {
   return ( 
     <main className="w-full flex lg:h-screen">
-      <AuthForm title="Entre na sua conta" isLogin={false}>
+      <AuthForm title="Entre na sua conta" isLogin>
         <div className="flex flex-col gap-4">
-          <MaskedInput
-            mask={phoneMask}
-            regexType="number"
+          <HybridInput
             title='Celular ou Email'
-            placeholder="(DD) XXXXX-XXXX"
+            placeholder="Insira seu número ou email"
             name="celular"
             labelClassName="auth-label"
             inputClassName="auth-input"
             iconContainerClassName="auth-icon"
             required
           />
-          
+
           <ValidatedInput
             title='Senha'
             placeholder="Senha (mínimo 6 caracteres)"
@@ -34,7 +31,7 @@ function LoginPage() {
         </div>
       </AuthForm>
 
-      <AuthSidebar />
+      <AuthSidebar isLogin />
     </main>
    );
 }
