@@ -9,7 +9,7 @@ function AuthSidebar({ isLogin }: { isLogin: boolean }) {
     <div className="hidden relative
     lg:flex-1 bg-cyan-900 h-screen lg:flex flex-col items-center justify-center gap-2 overflow-hidden">
       <W1Logo className="text-cyan-50 w-56 h-56 z-10" />
-      <p className="text-cyan-300 font-medium text-center text-xl w-[530px]">
+      <p className="text-cyan-300 font-medium text-center text-xl w-[515px] xl:w-[530px]">
         {isLogin ? textoLogin : textoCadastro}
       </p>
       

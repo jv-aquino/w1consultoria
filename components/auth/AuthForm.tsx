@@ -11,9 +11,13 @@ function AuthForm({ title, isLogin, children }: { title: String, isLogin: boolea
 
         <AuthButton isLogin={isLogin} />
         
-        <Link href={`/auth/${isLogin ? 'cadastro' : 'login'}`} className="auth-changeLink">
+        <Link href={`/auth/${isLogin ? 'cadastro' : 'login'}`} className="auth-changeLink group">
           {isLogin ? 'Ainda não tem uma conta?' : 'Já é cadastrado?'}
-          <span className="text-gray-900 pl-1 font-normal">{isLogin ? 'Cadastre-se' : 'Entre aqui'}</span>
+          <span className="px-0.5"></span>
+          <span className="text-gray-900 font-normal 
+          border-b-1 border-transparent colorTransition group-hover:border-cyan-900">
+            {isLogin ? 'Cadastre-se' : 'Entre aqui'}
+          </span>
         </Link>
       </form>
     </div>
