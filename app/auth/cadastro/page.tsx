@@ -7,7 +7,7 @@ import { phoneMask } from "@/utils";
 function CadastroPage() {
   return ( 
     <main className="w-full flex lg:h-screen">
-      <AuthSidebar />
+      <AuthSidebar isLogin={false} />
       <AuthForm title="Cadastre-se" isLogin={false}>
         <div className="flex flex-col gap-4">
           <ValidatedInput

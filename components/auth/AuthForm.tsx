@@ -5,7 +5,7 @@ import AuthButton from "./AuthButton";
 function AuthForm({ title, isLogin, children }: { title: String, isLogin: boolean, children: ReactNode }) {
   return ( 
     <div className="lg:flex-1 flex flex-col items-center justify-center">
-      <h1 className="mx-auto text-center text-4xl font-bold">{title}</h1>
+      <h1 className="mx-auto text-center text-4xl font-bold mb-1">{title}</h1>
       <form action="" className="auth-form">
         {children}
 

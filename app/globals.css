@@ -62,7 +62,7 @@ body {
 }
 @utility auth-input {
   width: 100%;
-  padding: 8px 12px;
+  padding: 10px 12px;
   border: 1px solid var(--color-gray-300);
   border-radius: 8px;
   @variant focus {
